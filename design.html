@@ -10,22 +10,45 @@
     <header>
         <!-- Link back to home page -->
         <h1><a href="index.html">Isabel Thomason</a></h1>
-        
     </header>
+    <nav>
+        <!-- Navigation links go here -->
+        <ul>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="drawing.html">Drawing</a></li>
+            <li><a href="misc.html">Misc.</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
 
     <main>
-       
         <!-- Image/Animation Gallery -->
-        <div class="gallery">
-            <!-- Insert images/animations here -->
-            <img src="artPortfolio/poster 2 copy.jpg" alt="Design 1">
-            <img src="images/design2.jpg" alt="Design 2">
-            <!-- Add more images/animations as needed -->
-        </div>
+        <!-- Carousel container -->
+<div class="carousel">
+  
+    <!-- Carousel buttons -->
+    <nav>
+      <a href="#" id="carouselPrev">&#x2B05;</a> <!-- &#x2B05; or &lt; can be used as a left arrow -->
+      <a href="#" id="carouselNext">&#x2B95;</a> <!-- &#x2B95; or &gt; can be used as the right arrow -->
+    </nav>
+    
+    <!-- Carousel image container -->
+    <div class="carousel-images" id="carouselImages">
+        <img src="artPortfolio/poster 2 copy.jpg" alt="Design 1">
+    </div>
+    
+    <!-- Carousel image captions -->
+    <p class="carousel-caption" id="carouselCaption"></p>
+  </div>
+
+    
     </main>
 
     <footer>
         <p>&copy; 2024 Isabel Thomason. All rights reserved.</p>
     </footer>
+
+    <script src="js/portfolio.js"></script> <!-- Include your JavaScript file -->
 </body>
 </html>
+
