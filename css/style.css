@@ -1,0 +1,69 @@
+/* Reset default margin and padding */
+body, h1, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set white background */
+body {
+    background-color: #ffffff; /* White background */
+    font-family: Arial, sans-serif; /* Use Arial font */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    margin: 0;
+}
+
+/* Center the heading */
+h1 {
+    text-align: center;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+/* Style the navigation list */
+nav {
+    width: 200px; /* Adjust width as needed */
+    float: left;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #000000; /* Black color */
+    padding: 5px 10px;
+}
+
+nav ul li a:hover {
+    background-color: #ff7c68; /* red background on hover */
+    color:#ffffff
+}
+
+/* Main content area */
+main {
+    margin-left: 220px; /* Account for the width of the navigation */
+    padding: 20px;
+    flex: 1;
+}
+
+/* Additional styling for images and animations */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* Center images and add some bottom margin */
+}
+
+footer {
+    text-align: center; /* Center-align the content */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #ff7c68;
+    color: #ffffff;
+}
