@@ -22,9 +22,18 @@ h1 {
 
 /* Style the navigation list */
 nav {
+    position: fixed; /* Position fixed */
+    top: 30%; /* Adjust as needed */
+    left: 50px; /* Adjust as needed */
+    transform: translateY(-50%); /* Center vertically */
     width: 200px; /* Adjust width as needed */
-    float: left;
+    z-index: 1000; /* Ensure it's above other content */
+    /* Additional styling */
+    background-color: #fff; /* Background color */
+    padding: 20px; /* Padding for better spacing */
 }
+
+
 
 nav ul {
     list-style-type: none;
@@ -60,10 +69,183 @@ img {
     display: block;
     margin: 0 auto 20px; /* Center images and add some bottom margin */
 }
-
+.carousel {
+  
+    /*
+      Position all children with "position: absolute;" relative to me, not <body>.
+    */
+    position: relative;
+    
+    justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+    
+    /* 
+      Width and height of an individual image, assuming all of your images
+      have the same dimensions
+    */
+    width: 500px;
+    height: 250px; 
+    
+    /*
+      This ensures only one of your images is shown at any one time
+    */
+    overflow: hidden;
+    
+    /* 
+      Only required if using flexbox or for centering
+    */
+    margin: auto;
+    
+    /* 
+      Fancy!
+    */
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+  }
+  
+  /*
+    This contains the carousel images. Change the width depending on the
+    number of images you have: Eg. 3 x 500px images = 1500px width.
+    Change the height depending on the height of a single image
+  */
+  .carousel-images {
+    display: flex;
+    
+    justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+    /*
+      We need fine control over the position of our carousel images, so
+      for this we will use position: absolute;
+    */
+    position: absolute;
+    
+    /*
+      The z-index property can be used on elements with position: absolute;
+      It defines the order elements are stacked on the page (Z Axis).
+    */
+    z-index: 1;
+    
+    /*
+      With position: absolute; we can define an offset to the initial position
+      This can be: top, bottom, left or right. In this case we'll pick left.
+    */
+    left: 0;
+    
+    /*
+      These values could be updated based on the size and number of images 
+      via JS if you want.
+    */
+    width: 4500px; 
+    height: 250px;
+    
+    /*
+      This line ensures we have a smooth transition between images. The
+      transition lasts for half a second with the "ease-in-out" bezier
+      function. In our JS we are changing the "left" property of our
+      "carouselImages" DOM element so we need to transition on the
+      "left" property.
+    */
+    transition: left .5s ease-in-out;
+  }
+  
+  /*
+    Image size set manually
+  */
+  .carousel-images img {
+    width: 500px;
+    height: 250px;
+  }
+  
+  /*
+    This contains the navigation buttons for the slideshow. Change the
+    width and height of this component to the size of a single image.
+  */
+  .carousel nav {
+    
+    /* Create a flex container */
+    display: flex;
+    justify-content: space-between;
+    
+    /* This allows us to place the navigation over the images */
+    position: absolute;
+    z-index: 2;
+    
+    /* This element is now the size of our carousel element */
+    width: 500px;
+    height: 200px;
+    
+    /* This will centre our buttons vertically */
+    line-height: 200px;
+  }
+  
+  /* This gives or nav buttons some style. */
+  .carousel nav a {
+    text-decoration: none;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 30pt;
+    padding: 0px 25px;
+    
+    /* This transitions all properties that change when we hover */
+    transition: all .25s ease;
+    
+    /* These properties are the ones that change on hover */
+    opacity: 0;
+    background-color: rgba(0,0,0,0);
+  }
+  
+  /* Our nav button hover state */
+  .carousel nav:hover a {
+    
+    /* Transition all the properties that change */
+    transition: all .25s ease;
+    
+    /* These properties are the ones that need to change back */
+    opacity: 1;
+    background-color: rgba(0,0,0,0.15);
+  }
+  
+  /* Place our caption over our image */
+  .carousel-caption {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    color: white;
+    background-color: rgba(0,0,0,0.25);
+    height: 50px;
+    line-height: 50px;
+    margin: 0px;
+  }
+  
+  /* ---------------------------------------------------- 
+    You do not NEED to change anything below this point.
+    Feel free to play around though.
+  ---------------------------------------------------- */
+  
+  html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  body::before {
+    position: absolute;
+    /*content: "Hover over the carousel to show navigation";*/
+    font-size: 0.8em;
+    margin-top: 10px;
+    color: #999;
+    width: 500px;
+    text-align: center;
+  }
 footer {
+    width: 100%;
     text-align: center; /* Center-align the content */
     padding: 20px; /* Add padding for better spacing */
     background-color: #ff7c68;
     color: #ffffff;
 }
+
