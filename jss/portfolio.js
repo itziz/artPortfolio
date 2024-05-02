@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var images = document.getElementById('carouselImages');
     
     // Image caption
-    var caption = document.getElementById('carouselCaption');
+    var caption = document.querySelector('.carousel-caption'); // Changed to use querySelector
     
     // Previous image button
     var prev = document.getElementById('carouselPrev');
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
       // Width of your images (could be calculated from clientWidth)
       // var imageWidth = images.getElementsByTagName('img')[0].clientWidth;
-      var imageWidth = 500;
+      var imageWidth = 400;
       
       /* ----------------------------------------
         Set some event listeners on our buttons
@@ -123,4 +123,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // The end of our DOMContentLoaded callback function
-    });
+});
